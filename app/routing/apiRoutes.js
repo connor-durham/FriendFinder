@@ -31,15 +31,17 @@ module.exports = function(app) {
         }
     
         let BF = friendsList[bestFriend];
-        res.json(BF);
+       
 
     friendsList.push(req.body);
+
+    res.json(BF);
 
   });
 
 
   app.post("/api/clear", function(req, res) {
-    friends.length = 0;
+    friendsList.length = 0;
     res.json({ ok: true });
   });
 };
