@@ -46,6 +46,15 @@ h4, h3 {
     margin-bottom: 30px;
 }
 
+#modal1 {
+	text-align: center;
+}
+
+#modalPic {
+	max-width: 100%;
+	height: auto;
+}
+
 </style>
 
 
@@ -231,15 +240,15 @@ h4, h3 {
       </div>
     </footer>
 
-    <div id="modal1" class="modal">
-        <div class="modal-content">
+    <div id="modal1" class="modal fade" role="dialog">
+        <div class="modal-dialog">
             <h4>Best friend match!</h4>
-            <h5 id="matchName"></h5>
-            <img id="matchPic" src=""  width = 300px>
+            <h5 id="modalName"></h5>
+            <img id="modalPic" src=""  width = 300px>
         </div>
             <div class="modal-footer">
-            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Done</a>
-        </div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="closebutton">Close</button>
+            </div>
     </div>
 
   </div>
@@ -279,9 +288,11 @@ h4, h3 {
 
 
 
-            $("#matchName").text(data.name);
-            $("#matchPic").attr("src", data.photo);
+            $("#modalName").text(data.name);
+            $("#modalPic").attr("src", data.photo);
+            $("#modal1").modal("toggle");
 
+        
 
       });
 
@@ -305,5 +316,8 @@ h4, h3 {
 
 
   });
+
+
+
 
 </script>
