@@ -233,7 +233,7 @@ h4, h3 {
 
     <div id="modal1" class="modal">
         <div class="modal-content">
-            <h4>Meet Your New BFF</h4>
+            <h4>Best friend match!</h4>
             <h5 id="matchName"></h5>
             <img id="matchPic" src=""  width = 300px>
         </div>
@@ -277,21 +277,16 @@ h4, h3 {
 
     $.post(currentURL + "/api/friends", newFriend, function(data) {
 
-        if (data) {
+
 
             $("#matchName").text(data.name);
-            $("#matchPic").attr("src", data.profilePic);
-            
-            $('.modal').modal();
-
-        }
+            $("#matchPic").attr("src", data.photo);
 
 
+      });
 
 
-        else {
-          alert("You have not completed the form");
-        }
+        $(".modal").modal();
 
 
         $("#name").val("");
@@ -308,7 +303,6 @@ h4, h3 {
         $("#question10").val("")
 
 
-      });
 
   });
 
